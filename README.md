@@ -4,6 +4,8 @@
 
 ![Project Screen](docs/screen.png)
 
+![Components](docs/components.png)
+
 ## Build Setup
 
 ``` bash
