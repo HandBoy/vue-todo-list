@@ -13,7 +13,7 @@
         <new-todo @newTask="addTask"></new-todo>
       </div>
       <div class="content">
-        <todo-list :tasks="tasks"></todo-list>
+        <todo-list :tasks="tasks" @check="finishTask"></todo-list>
       </div>
     </div>
   </div>
@@ -46,6 +46,9 @@ export default {
       addTask(task){
         let new_task = {'description': task, 'checked': false}
         this.tasks.push(new_task)
+      },
+      finishTask(index){
+        this.tasks[index]['checked'] = !this.tasks[index]['checked']
       }
   }
 }
