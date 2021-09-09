@@ -12,17 +12,22 @@
       <div class="content">
         <new-todo @newTask="addTask"></new-todo>
       </div>
-      <div class="content"></div>
+      <div class="content">
+        <todo-list :tasks="tasks"></todo-list>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import NewTodo from './NewTodo'
+import TodoList from './TodoList'
+
 export default {
   name: 'todo-card',
   components: {
-    NewTodo
+    NewTodo,
+    TodoList,
   },
   data () {
     return {
