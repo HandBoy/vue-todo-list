@@ -10,7 +10,7 @@
     </header>
     <div class="card-content">
       <div class="content">
-        <new-todo></new-todo>
+        <new-todo @newTask="addTask"></new-todo>
       </div>
       <div class="content"></div>
     </div>
@@ -36,6 +36,12 @@ export default {
       let newDate = new Date()
       return `${this.days[newDate.getDay()]}, ${newDate.getDate()} de ${this.months[newDate.getMonth()]}`
     }
+  },
+  methods: {
+      addTask(task){
+        let new_task = {'description': task, 'checked': false}
+        this.tasks.push(new_task)
+      }
   }
 }
 </script>

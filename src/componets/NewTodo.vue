@@ -7,7 +7,7 @@
              <input class="input is-primary has-text-centered" type="text" placeholder="Nova tarefa..." v-model="task">
           </p>
           <p class="control">
-            <a class="button is-success add-button">
+            <a class="button is-success add-button" @click="sendTask">
               <span class="icon is-small">
                 <i class="fa fa-plus"></i>
               </span>
@@ -25,6 +25,14 @@ export default {
   data () {
       return {
           task: ''
+      }
+  },
+  methods: {
+      sendTask() {
+        if(this.task != ''){
+          this.$emit('newTask', this.task)
+        }
+        this.task = ''
       }
   }
 }
