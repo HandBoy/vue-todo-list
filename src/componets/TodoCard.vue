@@ -13,7 +13,7 @@
         <new-todo @newTask="addTask"></new-todo>
       </div>
       <div class="content">
-        <todo-list :tasks="tasks" @check="finishTask"></todo-list>
+        <todo-list :tasks="tasks" @check="finishTask" @remove="removeTask"></todo-list>
       </div>
     </div>
   </div>
@@ -49,7 +49,10 @@ export default {
       },
       finishTask(index){
         this.tasks[index]['checked'] = !this.tasks[index]['checked']
-      }
+      },
+      removeTask(index){
+        this.tasks.splice(index, 1)
+      },
   }
 }
 </script>

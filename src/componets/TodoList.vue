@@ -11,7 +11,7 @@
           </p>
           <p class="control is-expanded task-description" :class="{'checked': task.checked }">{{ task.description }}</p>
           <p class="control">
-            <a class="button is-danger is-small">
+            <a class="button is-danger is-small" @click="remove(index)">
               <span class="icon is-small">
                 <i class="fa fa-trash"></i>
               </span>
@@ -32,9 +32,12 @@ export default {
     }
   },
   methods: {
-    check(index){
+    check(index) {
       console.log(index)
       this.$emit('check', index)
+    },
+    remove(index) {
+      this.$emit('remove', index)
     }
   }
 }
